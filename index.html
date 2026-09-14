@@ -25,7 +25,6 @@
       --text:     #1a2e42;
       --muted:    #5a7590;
       --muted2:   #8aa0b4;
-      --sky:      #7dd8f8;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'IBM Plex Sans', sans-serif;
@@ -47,6 +46,7 @@
       line-height: 1.65;
     }
 
+    /* subtle dot-grid texture */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -145,7 +145,7 @@
       color: #ffffff; line-height: 1.1;
       margin-bottom: 0.5rem; letter-spacing: -0.01em;
     }
-    .hero-inner h1 span { color: var(--sky); font-style: italic; }
+    .hero-inner h1 span { color: #7dd8f8; font-style: italic; }
     .hero-mn {
       font-size: 0.95rem; color: rgba(200,225,255,0.65);
       margin-bottom: 1.75rem; letter-spacing: 0.03em;
@@ -164,7 +164,7 @@
       display: inline-block; letter-spacing: 0.08em; text-transform: uppercase;
       font-family: var(--font-mono);
     }
-    .btn-primary { background: var(--sky); color: var(--navy); }
+    .btn-primary { background: #7dd8f8; color: var(--navy); }
     .btn-primary:hover { background: #a0e4ff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
     .btn-outline { border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.9); }
     .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); }
@@ -283,78 +283,8 @@
     }
     .enroll-box p { font-size: 0.88rem; opacity: 0.8; margin-bottom: 1.75rem; }
 
-    /* ── MEMBERSHIP ── */
-    #membership { background: var(--bg2); }
-    .member-types {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem; margin-bottom: 3rem;
-    }
-    .member-type-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 6px; padding: 1.25rem; text-align: center;
-      transition: all 0.25s;
-    }
-    .member-type-card:hover {
-      border-color: var(--accent); transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,40,100,0.1);
-    }
-    .member-type-card .icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
-    .member-type-card h4 {
-      font-family: var(--font-display); font-size: 1.1rem;
-      color: var(--navy); margin-bottom: 0.15rem;
-    }
-    .member-type-card .mn {
-      font-size: 0.7rem; color: var(--accent);
-      font-family: var(--font-mono); letter-spacing: 0.04em;
-    }
-
-    .member-form-wrap {
-      max-width: 720px; margin: 0 auto;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 2.5rem;
-      box-shadow: 0 8px 32px rgba(0,40,100,0.08);
-    }
-    .member-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .member-form .full { grid-column: 1 / -1; }
-    .member-form label {
-      display: block; font-size: 0.75rem; font-weight: 600;
-      color: var(--navy); margin-bottom: 0.35rem;
-      font-family: var(--font-mono); letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .member-form label .req { color: #c0392b; }
-    .member-form input, .member-form select, .member-form textarea {
-      width: 100%; padding: 0.7rem 0.9rem;
-      border: 1px solid var(--border); border-radius: 4px;
-      font-family: var(--font-body); font-size: 0.9rem;
-      color: var(--text); background: var(--surface2);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .member-form input:focus, .member-form select:focus, .member-form textarea:focus {
-      outline: none; border-color: var(--accent); background: #fff;
-      box-shadow: 0 0 0 3px rgba(0,119,170,0.1);
-    }
-    .member-form textarea { resize: vertical; min-height: 100px; }
-    .member-form .submit-row { grid-column: 1 / -1; text-align: center; margin-top: 0.5rem; }
-    .member-form button {
-      border: none; cursor: pointer;
-      font-family: var(--font-mono);
-      background: var(--accent); color: #fff;
-      padding: 0.8rem 2.5rem; border-radius: 4px;
-      font-size: 0.8rem; letter-spacing: 0.08em;
-      text-transform: uppercase; transition: all 0.22s;
-    }
-    .member-form button:hover { background: var(--accent2); transform: translateY(-2px); }
-    .member-form button:disabled { opacity: 0.6; cursor: wait; transform: none; }
-    #mf-status {
-      grid-column: 1 / -1; text-align: center;
-      font-family: var(--font-mono); font-size: 0.82rem;
-      padding-top: 0.75rem; display: none; line-height: 1.6;
-    }
-    #mf-copy-link { color: var(--accent); text-decoration: underline; cursor: pointer; }
-
     /* ── WORKSHOP ── */
-    #workshop { background: var(--surface); }
+    #workshop { background: var(--bg2); }
     .workshop-hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 55%, #1d6a8a 100%);
       border-radius: 8px; padding: 2.5rem; color: #fff;
@@ -392,12 +322,13 @@
     .ws-meta-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; }
     .ws-meta-item .icon { font-size: 1rem; margin-top: 0.1rem; }
     .ws-meta-item strong {
-      display: block; font-weight: 600; color: var(--sky);
+      display: block; font-weight: 600; color: #7dd8f8;
       font-family: var(--font-mono); font-size: 0.7rem;
       letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.15rem;
     }
     .ws-meta-item span { color: rgba(220,235,255,0.88); }
 
+    /* Agenda */
     .agenda-title {
       font-family: var(--font-mono); font-size: 0.76rem; font-weight: 600;
       color: var(--accent); margin-bottom: 1.25rem;
@@ -413,7 +344,9 @@
       box-shadow: 0 2px 20px rgba(0,40,100,0.07);
       margin-bottom: 2rem; font-size: 0.88rem;
     }
-    .agenda-table thead tr { background: var(--navy); color: #fff; }
+    .agenda-table thead tr {
+      background: var(--navy); color: #fff;
+    }
     .agenda-table thead th {
       padding: 0.9rem 1.25rem; text-align: left;
       font-family: var(--font-mono); font-weight: 600; font-size: 0.72rem;
@@ -429,6 +362,7 @@
       width: 145px; letter-spacing: 0.03em;
     }
 
+    /* Row types */
     tr.row-break        { background: var(--break-bg); }
     tr.row-break .time-cell { color: var(--gold); }
     tr.row-lunch        { background: #eef7f0; }
@@ -497,14 +431,14 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
     .contact-info h3 {
       font-family: var(--font-mono); font-size: 0.75rem;
-      font-weight: 600; color: var(--sky); margin-bottom: 1.5rem;
+      font-weight: 600; color: #7dd8f8; margin-bottom: 1.5rem;
       text-transform: uppercase; letter-spacing: 0.12em;
     }
     .contact-item { display: flex; gap: 0.85rem; margin-bottom: 1.25rem; align-items: flex-start; }
     .contact-item .ci-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.15rem; }
     .contact-item .ci-text { font-size: 0.88rem; color: rgba(200,225,245,0.85); }
     .contact-item .ci-text strong {
-      display: block; color: var(--sky);
+      display: block; color: #7dd8f8;
       font-family: var(--font-mono); font-size: 0.68rem;
       text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;
     }
@@ -518,7 +452,7 @@
       font-weight: 700; font-size: 0.82rem;
       font-family: var(--font-mono); transition: all 0.2s;
     }
-    .social-links a:hover { background: rgba(120,210,255,0.15); border-color: var(--sky); color: var(--sky); }
+    .social-links a:hover { background: rgba(120,210,255,0.15); border-color: #7dd8f8; color: #7dd8f8; }
 
     .contact-form { display: flex; flex-direction: column; gap: 0.85rem; }
     .contact-form input, .contact-form textarea {
@@ -530,21 +464,11 @@
     }
     .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(180,210,240,0.4); }
     .contact-form input:focus, .contact-form textarea:focus {
-      outline: none; border-color: var(--sky);
+      outline: none; border-color: #7dd8f8;
       box-shadow: 0 0 0 3px rgba(100,200,240,0.12);
     }
     .contact-form textarea { resize: vertical; min-height: 130px; }
-    .contact-form button {
-      border: none; cursor: pointer;
-      font-family: var(--font-mono);
-      background: var(--sky); color: var(--navy);
-      padding: 0.75rem 2rem; border-radius: 4px;
-      font-size: 0.8rem; letter-spacing: 0.08em;
-      text-transform: uppercase; transition: all 0.22s;
-    }
-    .contact-form button:hover { background: #a0e4ff; transform: translateY(-2px); }
-    .contact-form button:disabled { opacity: 0.6; cursor: wait; transform: none; }
-    #cf-status { font-family: var(--font-mono); font-size: 0.8rem; display: none; text-align: center; }
+    #cf-status { font-family: var(--font-mono); font-size: 0.8rem; }
 
     /* ── FOOTER ── */
     footer {
@@ -566,8 +490,6 @@
       .time-cell { width: 110px; font-size: 0.72rem; }
       .ws-meta { flex-direction: column; gap: 0.75rem; }
       .register-strip { flex-direction: column; text-align: center; }
-      .member-form { grid-template-columns: 1fr; }
-      .member-form-wrap { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -579,8 +501,8 @@
   <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#about">Services</a>
     <a href="#training">Training</a>
-    <a href="#membership">Membership</a>
     <a href="#workshop" class="highlight">Workshop 2026</a>
     <a href="#contact">Contact</a>
     <span class="lang-toggle">MN / EN</span>
@@ -595,7 +517,7 @@
     <p class="hero-mn">Монголын Гео-мэдээллийн салбарын төлөөлөл</p>
     <p>The Mongolian Geospatial Association advances remote sensing, GIS, GNSS, and photogrammetry technologies to empower professionals and students across Mongolia.</p>
     <div class="hero-btns">
-      <a href="#membership" class="btn btn-primary">Join MGA</a>
+      <a href="#contact" class="btn btn-primary">Join MGA</a>
       <a href="#workshop" class="btn btn-outline">Workshop 2026 →</a>
     </div>
   </div>
@@ -681,107 +603,6 @@
         <p>Join Mongolia's leading geospatial training community and gain internationally recognized expertise.</p>
         <a href="#contact" class="btn btn-primary">Enroll Now / Одоо Элсэх</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- MEMBERSHIP -->
-<section id="membership">
-  <div class="container">
-    <div class="section-header">
-      <h2>Become a Member <span style="font-weight:400;color:var(--muted)">/ Гишүүн Болох</span></h2>
-      <p class="sub">Гишүүнчлэлийн Бүртгэл</p>
-      <div class="divider"></div>
-    </div>
-
-    <!-- Member Types -->
-    <div class="member-types">
-      <div class="member-type-card">
-        <div class="icon">🎓</div>
-        <h4>Student</h4>
-        <div class="mn">Оюутан</div>
-      </div>
-      <div class="member-type-card">
-        <div class="icon">👤</div>
-        <h4>Regular</h4>
-        <div class="mn">Энгийн</div>
-      </div>
-      <div class="member-type-card">
-        <div class="icon">🏢</div>
-        <h4>Institution</h4>
-        <div class="mn">Байгууллага</div>
-      </div>
-      <div class="member-type-card">
-        <div class="icon">🏅</div>
-        <h4>Honorary</h4>
-        <div class="mn">Хүндэт</div>
-      </div>
-      <div class="member-type-card">
-        <div class="icon">💼</div>
-        <h4>Advisory</h4>
-        <div class="mn">Зөвлөх</div>
-      </div>
-    </div>
-
-    <!-- Registration Form -->
-    <div class="member-form-wrap">
-      <form class="member-form" id="memberForm">
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-        <input type="hidden" name="subject" value="New MGA Membership Registration">
-        <input type="hidden" name="from_name" value="MGA Website — Membership">
-
-        <div>
-          <label for="mf-name">Full Name / Овог нэр <span class="req">*</span></label>
-          <input type="text" id="mf-name" name="name" required>
-        </div>
-        <div>
-          <label for="mf-email">Email / И-мэйл <span class="req">*</span></label>
-          <input type="email" id="mf-email" name="email" required>
-        </div>
-        <div>
-          <label for="mf-phone">Phone / Утас</label>
-          <input type="tel" id="mf-phone" name="phone">
-        </div>
-        <div>
-          <label for="mf-type">Member Type / Гишүүний төрөл <span class="req">*</span></label>
-          <select id="mf-type" name="member_type" required>
-            <option value="">— Select / Сонгоно уу —</option>
-            <option value="student">Student / Оюутан</option>
-            <option value="regular">Regular / Энгийн</option>
-            <option value="institution">Institution / Байгууллага</option>
-            <option value="honorary">Honorary / Хүндэт</option>
-            <option value="advisory">Advisory / Зөвлөх</option>
-          </select>
-        </div>
-        <div>
-          <label for="mf-org">Organization / Байгууллага</label>
-          <input type="text" id="mf-org" name="organization">
-        </div>
-        <div>
-          <label for="mf-position">Position / Албан тушаал</label>
-          <input type="text" id="mf-position" name="position">
-        </div>
-        <div class="full">
-          <label for="mf-expertise">Area of Expertise / Мэргэжлийн чиглэл</label>
-          <select id="mf-expertise" name="expertise">
-            <option value="">— Select / Сонгоно уу —</option>
-            <option value="remote-sensing">Remote Sensing / Зайнаас Тандан Судлал</option>
-            <option value="gis">GIS / ГМС</option>
-            <option value="gnss">GNSS / ГНСС</option>
-            <option value="photogrammetry">Photogrammetry / Фотограмметр</option>
-            <option value="cartography">Cartography / Зураг Зүй</option>
-            <option value="other">Other / Бусад</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="mf-message">Additional Notes / Нэмэлт тайлбар</label>
-          <textarea id="mf-message" name="message" rows="3"></textarea>
-        </div>
-        <div class="submit-row">
-          <button type="submit" id="mf-submit">Register / Бүртгүүлэх</button>
-        </div>
-        <div id="mf-status"></div>
-      </form>
     </div>
   </div>
 </section>
@@ -957,7 +778,7 @@
                 <span class="talk">Satellite-based Monitoring of Natural Resource Use and Environmental Conditions for Compliance with National Legislation: From Isolated Cases to a Lawful Systemic Practice Across Central Asian Countries</span>
                 <span class="who"><strong>Abzal Zhamalov</strong> — Association of Remote Sensing Companies in Kazakhstan (DZZ), Republic of Kazakhstan</span>
               </li>
-            </ul>
+                          </ul>
           </td>
         </tr>
 
@@ -989,9 +810,9 @@
                 <span class="talk">Utilizing Hyperspectral Satellite Data for Geological Mapping and Mineral Exploration</span>
                 <span class="who"><strong>Boloroo Bayaraa</strong> — Mongolian Geospatial Association (MGA)</span>
               </li>
-              <li>
-                <span class="talk">Demo &amp; Case Study: How Satellites Help Us Understand Earth</span>
-                <span class="who">Stories for Young Generations</span>
+               <li>
+                <span class="talk">Demo & Case Study: How Satellites Help Us Understand Earth</span>
+                <span class="who"><strong></strong> — Stories for Young Generations</span>
               </li>
               <li>
                 <span class="talk">Networking &amp; Q&amp;A</span>
@@ -1069,17 +890,14 @@
         </div>
       </div>
       <div>
-        <form class="contact-form" id="contactForm">
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-          <input type="hidden" name="subject" value="New message from MGA Website">
-          <input type="hidden" name="from_name" value="MGA Website — Contact">
-          <input type="text" id="cf-name" name="name" placeholder="Name / Нэр" required>
-          <input type="email" id="cf-email" name="email" placeholder="Your Email / Таны Имэйл" required>
-          <input type="text" id="cf-subject" name="user_subject" placeholder="Subject / Сэдэв">
-          <textarea id="cf-message" name="message" placeholder="Message / Мессеж" required></textarea>
-          <button type="submit" id="cf-send">Send Message / Мессеж Илгээх</button>
-          <div id="cf-status"></div>
-        </form>
+        <div class="contact-form" id="contactForm">
+          <input type="text" id="cf-name" placeholder="Name / Нэр" />
+          <input type="email" id="cf-email" placeholder="Your Email / Таны Имэйл" />
+          <input type="text" id="cf-subject" placeholder="Subject / Сэдэв" />
+          <textarea id="cf-message" placeholder="Message / Мессеж"></textarea>
+          <button id="cf-send" class="btn btn-primary" style="border:none;cursor:pointer;font-family:var(--font-body);">Send Message / Мессеж Илгээх</button>
+          <div id="cf-status" style="font-size:0.85rem;color:var(--sky);display:none;text-align:center;padding-top:0.25rem;"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1092,117 +910,32 @@
 </footer>
 
 <script>
-  // ── MEMBERSHIP FORM ──
-  (function () {
-    var form    = document.getElementById('memberForm');
-    var btn     = document.getElementById('mf-submit');
-    var status  = document.getElementById('mf-status');
+  document.getElementById('cf-send').addEventListener('click', function () {
+    var name    = document.getElementById('cf-name').value.trim();
+    var email   = document.getElementById('cf-email').value.trim();
+    var subject = document.getElementById('cf-subject').value.trim();
+    var message = document.getElementById('cf-message').value.trim();
+    var status  = document.getElementById('cf-status');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      status.style.display = 'none';
-
-      var data = new FormData(form);
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
-      .then(function (r) { return r.json(); })
-      .then(function (res) {
-        if (res.success) {
-          var name  = form.querySelector('#mf-name').value.trim();
-          var email = form.querySelector('#mf-email').value.trim();
-          var type  = form.querySelector('#mf-type').value;
-          var org   = form.querySelector('#mf-org').value.trim();
-          var msg   = form.querySelector('#mf-message').value.trim();
-
-          status.style.color = '#1a6040';
-          status.innerHTML =
-            '✅ <strong>Thank you, ' + escapeHtml(name) + '!</strong><br>' +
-            'Your membership registration has been received. We will contact you at <em>' + escapeHtml(email) + '</em>.<br>' +
-            '<span id="mf-copy-link">📧 Send a copy from your own email</span>';
-
-          var copyLink = document.getElementById('mf-copy-link');
-          copyLink.addEventListener('click', function () {
-            var subject = 'MGA Membership Registration — ' + name;
-            var body =
-              'Name: ' + name + '\n' +
-              'Email: ' + email + '\n' +
-              'Member Type: ' + type + '\n' +
-              (org ? 'Organization: ' + org + '\n' : '') +
-              (msg ? '\nNotes: ' + msg : '');
-            window.location.href = 'mailto:info@geomedeelel.mn'
-              + '?subject=' + encodeURIComponent(subject)
-              + '&body='    + encodeURIComponent(body);
-          });
-
-          form.reset();
-        } else {
-          status.style.color = '#c0392b';
-          status.textContent = '⚠️ Something went wrong. Please try again or email info@geomedeelel.mn.';
-        }
-      })
-      .catch(function () {
-        status.style.color = '#c0392b';
-        status.textContent = '⚠️ Network error. Please try again or email info@geomedeelel.mn.';
-      })
-      .finally(function () {
-        btn.disabled = false;
-        btn.textContent = 'Register / Бүртгүүлэх';
-        status.style.display = 'block';
-      });
-    });
-
-    function escapeHtml(s) {
-      return s.replace(/[&<>"']/g, function (c) {
-        return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
-      });
+    if (!name || !email || !message) {
+      status.style.color = '#e87a35';
+      status.textContent = '⚠️ Please fill in your name, email, and message.';
+      status.style.display = 'block';
+      return;
     }
-  })();
 
-  // ── CONTACT FORM ──
-  (function () {
-    var form   = document.getElementById('contactForm');
-    var btn    = document.getElementById('cf-send');
-    var status = document.getElementById('cf-status');
+    var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+    var subjectLine = subject ? subject : 'Inquiry from MGA Website';
+    var mailto = 'mailto:info@geomedeelel.mn'
+      + '?subject=' + encodeURIComponent(subjectLine)
+      + '&body=' + encodeURIComponent(body);
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      status.style.display = 'none';
+    window.location.href = mailto;
 
-      var data = new FormData(form);
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
-      .then(function (r) { return r.json(); })
-      .then(function (res) {
-        if (res.success) {
-          status.style.color = 'var(--sky)';
-          status.textContent = '✅ Message sent — we will get back to you soon.';
-          form.reset();
-        } else {
-          status.style.color = '#e87a35';
-          status.textContent = '⚠️ Something went wrong. Please email info@geomedeelel.mn directly.';
-        }
-      })
-      .catch(function () {
-        status.style.color = '#e87a35';
-        status.textContent = '⚠️ Network error. Please email info@geomedeelel.mn directly.';
-      })
-      .finally(function () {
-        btn.disabled = false;
-        btn.textContent = 'Send Message / Мессеж Илгээх';
-        status.style.display = 'block';
-      });
-    });
-  })();
+    status.style.color = 'var(--sky)';
+    status.textContent = '✅ Opening your email client…';
+    status.style.display = 'block';
+  });
 </script>
 </body>
 </html>
