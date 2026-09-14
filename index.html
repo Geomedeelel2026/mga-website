@@ -286,7 +286,7 @@
     /* ── MEMBERSHIP ── */
     #membership { background: var(--bg2); }
     .member-types {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem; margin-bottom: 3rem;
     }
     .member-type-card {
@@ -339,12 +339,19 @@
     .member-form button {
       border: none; cursor: pointer;
       font-family: var(--font-mono);
+      background: var(--accent); color: #fff;
+      padding: 0.8rem 2.5rem; border-radius: 4px;
+      font-size: 0.8rem; letter-spacing: 0.08em;
+      text-transform: uppercase; transition: all 0.22s;
     }
+    .member-form button:hover { background: var(--accent2); transform: translateY(-2px); }
+    .member-form button:disabled { opacity: 0.6; cursor: wait; transform: none; }
     #mf-status {
       grid-column: 1 / -1; text-align: center;
-      font-family: var(--font-mono); font-size: 0.8rem;
-      padding-top: 0.5rem; display: none;
+      font-family: var(--font-mono); font-size: 0.82rem;
+      padding-top: 0.75rem; display: none; line-height: 1.6;
     }
+    #mf-copy-link { color: var(--accent); text-decoration: underline; cursor: pointer; }
 
     /* ── WORKSHOP ── */
     #workshop { background: var(--surface); }
@@ -527,7 +534,17 @@
       box-shadow: 0 0 0 3px rgba(100,200,240,0.12);
     }
     .contact-form textarea { resize: vertical; min-height: 130px; }
-    #cf-status { font-family: var(--font-mono); font-size: 0.8rem; }
+    .contact-form button {
+      border: none; cursor: pointer;
+      font-family: var(--font-mono);
+      background: var(--sky); color: var(--navy);
+      padding: 0.75rem 2rem; border-radius: 4px;
+      font-size: 0.8rem; letter-spacing: 0.08em;
+      text-transform: uppercase; transition: all 0.22s;
+    }
+    .contact-form button:hover { background: #a0e4ff; transform: translateY(-2px); }
+    .contact-form button:disabled { opacity: 0.6; cursor: wait; transform: none; }
+    #cf-status { font-family: var(--font-mono); font-size: 0.8rem; display: none; text-align: center; }
 
     /* ── FOOTER ── */
     footer {
@@ -565,4 +582,627 @@
     <a href="#training">Training</a>
     <a href="#membership">Membership</a>
     <a href="#workshop" class="highlight">Workshop 2026</a>
-   
+    <a href="#contact">Contact</a>
+    <span class="lang-toggle">MN / EN</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Mongolian Geospatial Association</div>
+    <h1>Mongolia's <span>Geospatial</span> HUB</h1>
+    <p class="hero-mn">Монголын Гео-мэдээллийн салбарын төлөөлөл</p>
+    <p>The Mongolian Geospatial Association advances remote sensing, GIS, GNSS, and photogrammetry technologies to empower professionals and students across Mongolia.</p>
+    <div class="hero-btns">
+      <a href="#membership" class="btn btn-primary">Join MGA</a>
+      <a href="#workshop" class="btn btn-outline">Workshop 2026 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Members &amp; Supporters<br><em>Гишүүд, Дэмжигчид</em></div></div>
+  <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Active<br><em>Жил</em></div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Projects<br><em>Төслүүд</em></div></div>
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Countries<br><em>Улс Орнууд</em></div></div>
+</div>
+
+<!-- FOCUS AREAS -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Focus Areas <span style="font-weight:400;color:var(--muted)">/ Үндсэн Чиглэлүүд</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">🛰️</div>
+        <h3>Remote Sensing</h3>
+        <p class="mn">Зайнаас Тандан Судлал</p>
+        <p>Advanced satellite imagery analysis and Earth observation technologies for environmental monitoring and resource management.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">🗺️</div>
+        <h3>GIS Systems</h3>
+        <p class="mn">ГМС Систем</p>
+        <p>Geographic Information Systems for spatial data analysis, mapping, and decision-making support across multiple sectors.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">📡</div>
+        <h3>GNSS Technology</h3>
+        <p class="mn">GNSS Технологи</p>
+        <p>Global Navigation Satellite Systems for precise positioning, surveying, and geospatial data collection.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">📸</div>
+        <h3>Photogrammetry</h3>
+        <p class="mn">Фотограмметр</p>
+        <p>3D modeling and measurements from photographs for mapping, surveying, and documentation projects.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">🎓</div>
+        <h3>Capacity Building</h3>
+        <p class="mn">Чадавхи Бэхжүүлэлт</p>
+        <p>Professional training programs and workshops to develop geospatial expertise across Mongolia.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">🤝</div>
+        <h3>International Cooperation</h3>
+        <p class="mn">Олон Улсын Хамтын Ажиллагаа</p>
+        <p>Partnerships with geospatial organizations worldwide to advance knowledge sharing and collaboration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+  <div class="container">
+    <div class="section-header">
+      <h2>Training Programs <span style="font-weight:400;color:var(--muted)">/ Сургалтын Хөтөлбөрүүд</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="training-layout">
+      <ul class="training-list">
+        <li>Beginner GIS &amp; Remote Sensing Fundamentals<br><small style="color:var(--muted)">ГМС болон ЗТС-ын Анхан Шатны Үндэс</small></li>
+        <li>Intermediate Spatial Analysis Techniques<br><small style="color:var(--muted)">Орон Зайн Дүн Шинжилгээний Аргачлалууд</small></li>
+        <li>Advanced GNSS Surveying Methods<br><small style="color:var(--muted)">GNSS Хэмжилтийн Дэвшилтэт Аргууд</small></li>
+        <li>Drone Photogrammetry &amp; 3D Modeling<br><small style="color:var(--muted)">Нисгэгчгүй Нисэх Төхөөрөмжийн Фотограмметр болон 3D Загварчлал</small></li>
+        <li>Spatial Data Infrastructure Development<br><small style="color:var(--muted)">Орон Зайн Мэдээллийн Дэд Бүтэц</small></li>
+        <li>Environmental Monitoring Applications<br><small style="color:var(--muted)">Байгаль Орчин, Байгаль Хамгаалалын Менежментийн Хэрэглээ</small></li>
+        <li>Professional Certification Programs<br><small style="color:var(--muted)">Мэргэжлийн Чадваржуулах Хөтөлбөр</small></li>
+        <li>Custom Corporate Training Solutions<br><small style="color:var(--muted)">Байгууллагын Захиалгат Сургалтууд</small></li>
+      </ul>
+      <div class="enroll-box">
+        <div style="font-size:3rem;margin-bottom:1rem;">🎯</div>
+        <h3>Ready to Advance Your Skills?</h3>
+        <p>Join Mongolia's leading geospatial training community and gain internationally recognized expertise.</p>
+        <a href="#contact" class="btn btn-primary">Enroll Now / Одоо Элсэх</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="container">
+    <div class="section-header">
+      <h2>Become a Member <span style="font-weight:400;color:var(--muted)">/ Гишүүн Болох</span></h2>
+      <p class="sub">Гишүүнчлэлийн Бүртгэл</p>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Member Types -->
+    <div class="member-types">
+      <div class="member-type-card">
+        <div class="icon">🎓</div>
+        <h4>Student</h4>
+        <div class="mn">Оюутан</div>
+      </div>
+      <div class="member-type-card">
+        <div class="icon">👤</div>
+        <h4>Regular</h4>
+        <div class="mn">Энгийн</div>
+      </div>
+      <div class="member-type-card">
+        <div class="icon">🏢</div>
+        <h4>Institution</h4>
+        <div class="mn">Байгууллага</div>
+      </div>
+      <div class="member-type-card">
+        <div class="icon">🏅</div>
+        <h4>Honorary</h4>
+        <div class="mn">Хүндэт</div>
+      </div>
+      <div class="member-type-card">
+        <div class="icon">💼</div>
+        <h4>Advisory</h4>
+        <div class="mn">Зөвлөх</div>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="member-form-wrap">
+      <form class="member-form" id="memberForm">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New MGA Membership Registration">
+        <input type="hidden" name="from_name" value="MGA Website — Membership">
+
+        <div>
+          <label for="mf-name">Full Name / Овог нэр <span class="req">*</span></label>
+          <input type="text" id="mf-name" name="name" required>
+        </div>
+        <div>
+          <label for="mf-email">Email / И-мэйл <span class="req">*</span></label>
+          <input type="email" id="mf-email" name="email" required>
+        </div>
+        <div>
+          <label for="mf-phone">Phone / Утас</label>
+          <input type="tel" id="mf-phone" name="phone">
+        </div>
+        <div>
+          <label for="mf-type">Member Type / Гишүүний төрөл <span class="req">*</span></label>
+          <select id="mf-type" name="member_type" required>
+            <option value="">— Select / Сонгоно уу —</option>
+            <option value="student">Student / Оюутан</option>
+            <option value="regular">Regular / Энгийн</option>
+            <option value="institution">Institution / Байгууллага</option>
+            <option value="honorary">Honorary / Хүндэт</option>
+            <option value="advisory">Advisory / Зөвлөх</option>
+          </select>
+        </div>
+        <div>
+          <label for="mf-org">Organization / Байгууллага</label>
+          <input type="text" id="mf-org" name="organization">
+        </div>
+        <div>
+          <label for="mf-position">Position / Албан тушаал</label>
+          <input type="text" id="mf-position" name="position">
+        </div>
+        <div class="full">
+          <label for="mf-expertise">Area of Expertise / Мэргэжлийн чиглэл</label>
+          <select id="mf-expertise" name="expertise">
+            <option value="">— Select / Сонгоно уу —</option>
+            <option value="remote-sensing">Remote Sensing / Зайнаас Тандан Судлал</option>
+            <option value="gis">GIS / ГМС</option>
+            <option value="gnss">GNSS / ГНСС</option>
+            <option value="photogrammetry">Photogrammetry / Фотограмметр</option>
+            <option value="cartography">Cartography / Зураг Зүй</option>
+            <option value="other">Other / Бусад</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="mf-message">Additional Notes / Нэмэлт тайлбар</label>
+          <textarea id="mf-message" name="message" rows="3"></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" id="mf-submit">Register / Бүртгүүлэх</button>
+        </div>
+        <div id="mf-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP -->
+<section id="workshop">
+  <div class="container">
+    <div class="section-header">
+      <h2>International Workshop 2026</h2>
+      <p class="sub">Олон Улсын Семинар 2026</p>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Workshop Hero Card -->
+    <div class="workshop-hero">
+      <div class="ws-badge">Upcoming Event</div>
+      <h3>International Workshop on<br>Remote Sensing and Geospatial Applications</h3>
+      <div class="ws-meta">
+        <div class="ws-meta-item">
+          <span class="icon">📅</span>
+          <div><strong>Date</strong><br><span>June 24, 2026 — Starting 09:00</span></div>
+        </div>
+        <div class="ws-meta-item">
+          <span class="icon">📍</span>
+          <div><strong>Venue</strong><br><span>Mongolian University of Science &amp; Technology (MUST), Ulaanbaatar, Mongolia</span></div>
+        </div>
+        <div class="ws-meta-item">
+          <span class="icon">🌐</span>
+          <div><strong>Format</strong><br><span>In-person, International Speakers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENDA -->
+    <div class="agenda-title">📋 Full Workshop Agenda</div>
+
+    <table class="agenda-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Session / Event</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Registration -->
+        <tr class="row-registration">
+          <td class="time-cell">08:30 – 09:00</td>
+          <td>
+            <span class="row-label label-reg">Registration</span>
+            <div class="event-title">Participant Registration &amp; Welcome</div>
+          </td>
+        </tr>
+
+        <!-- Opening -->
+        <tr class="row-opening">
+          <td class="time-cell">09:00 – 09:20</td>
+          <td>
+            <span class="row-label label-opening">Opening</span>
+            <div class="event-title">Opening Ceremony</div>
+            <ul class="speakers-list">
+              <li>
+                <span class="talk">Welcome Address</span>
+                <span class="who"><strong>Dr. Namnan Tumurpurev</strong> — President, Mongolian University of Science and Technology (MUST), Mongolia</span>
+              </li>
+              <li>
+                <span class="talk">Opening Remarks</span>
+                <span class="who"><strong>Dr. Shu-San Hsiau</strong>, President, National Central University (NCU), Taiwan</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- MOU -->
+        <tr class="row-mou">
+          <td class="time-cell">09:20 – 09:30</td>
+          <td>
+            <span class="row-label label-mou">Ceremony</span>
+            <div class="event-title">MOU Signing Ceremony</div>
+            <div class="mou-note">Memorandum of Understanding signing between <strong>Mongolian University of Science and Technology (MUST)</strong> and <strong>National Central University (NCU), Taiwan</strong></div>
+          </td>
+        </tr>
+
+        <!-- Keynote -->
+        <tr class="row-keynote">
+          <td class="time-cell">09:30 – 10:00</td>
+          <td>
+            <span class="row-label label-keynote">Keynote</span>
+            <div class="event-title">Remote Sensing, Spatial Analysis and AI: Operations and Applications in Taiwan</div>
+            <div class="presenter"><strong>Dr. Fuan Tsai</strong> — President, Chinese Society of Photogrammetry and Remote Sensing (CSPRS); Professor, Center for Space and Remote Sensing Research, National Central University (NCU), Taiwan</div>
+          </td>
+        </tr>
+
+        <!-- Keynote 2 -->
+        <tr class="row-keynote">
+          <td class="time-cell">10:00 – 10:25</td>
+          <td>
+            <span class="row-label label-keynote">Keynote</span>
+            <div class="event-title">Introduction of the National Remote Sensing Center</div>
+            <div class="presenter"><strong>Dr. Lkhagvadorj Nanzad</strong> — Satellite Application and Remote Sensing Research Division, Institute of Research and Information of Meteorology, Hydrology and Environment, Mongolia</div>
+          </td>
+        </tr>
+
+        <!-- Break -->
+        <tr class="row-break">
+          <td class="time-cell">10:25 – 10:45</td>
+          <td>
+            <span class="row-label label-break">Break</span>
+            <div class="event-title">Coffee Break ☕</div>
+          </td>
+        </tr>
+
+        <!-- Session I -->
+        <tr class="row-s1">
+          <td class="time-cell">10:45 – 12:30</td>
+          <td>
+            <span class="row-label label-session">Session I</span>
+            <div class="event-title" style="margin-bottom:0.6rem;">Geospatial Solutions and Tools</div>
+            <ul class="speakers-list">
+              <li>
+                <span class="talk">Remote Sensing and GNSS-based Validation for Environmental Monitoring: Case Studies from Estonia</span>
+                <span class="who"><strong>Prof. Aive Liibusk</strong> — Estonian University of Life Sciences, Estonia</span>
+              </li>
+              <li>
+                <span class="talk">Ubhub: Ulaanbaatar Digital Twin Platform</span>
+                <span class="who"><strong>Bilguuntugs Tovuusuren</strong> — MonMap LLC, Mongolia</span>
+              </li>
+              <li>
+                <span class="talk">Applications of Geospatial Technology in National Public Infrastructure</span>
+                <span class="who"><strong>Chen-Yung Lu</strong> — CECI Engineering Consultants Inc., Taiwan</span>
+              </li>
+              <li>
+                <span class="talk">Monitoring Forest Pest Damage using Vegetation Indices from UAV Imagery</span>
+                <span class="who"><strong>Burmaa Chuluunbat</strong> — Engineering Geodesy LLC, Mongolia</span>
+              </li>
+              <li>
+                <span class="talk">Spatio-Temporal Dynamics of Traffic Congestion and Solutions for Sustainable Urban Mobility in Ulaanbaatar</span>
+                <span class="who"><strong>Usukhbayar Ganbaatar</strong> — Mongolian Geospatial Association (MGA)</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Lunch -->
+        <tr class="row-lunch">
+          <td class="time-cell">12:30 – 14:00</td>
+          <td>
+            <span class="row-label label-lunch">Lunch</span>
+            <div class="event-title">Lunch Break 🍽️</div>
+          </td>
+        </tr>
+
+        <!-- Session II -->
+        <tr class="row-s2">
+          <td class="time-cell">14:00 – 15:40</td>
+          <td>
+            <span class="row-label label-session">Session II</span>
+            <div class="event-title" style="margin-bottom:0.6rem;">Synergistic Case Studies for Earth Observation</div>
+            <ul class="speakers-list">
+              <li>
+                <span class="talk">Determination of Alteration Zoning in Porphyry-type Deposits using Hyperspectral Imagery</span>
+                <span class="who"><strong>Dr. Bayasgalan Amgalan</strong> — Trigteq LLC, Mongolia</span>
+              </li>
+              <li>
+                <span class="talk">AI-Based Information Extraction from High-Resolution Satellites: Building Extraction and Disaster Analysis</span>
+                <span class="who"><strong>Tsutomu Yamanoguchi</strong> — Remote Sensing Technology Center (RESTEC), Japan</span>
+              </li>
+              <li>
+                <span class="talk">Integrating Satellite Remote Sensing and Dynamic GIS for Urban Flood Risk Modelling in Ulaanbaatar City</span>
+                <span class="who"><strong>Erkhemzorig Ishdorj</strong> — Graduate Student, MUST / MGA</span>
+              </li>
+              <li>
+                <span class="talk">Satellite-based Monitoring of Natural Resource Use and Environmental Conditions for Compliance with National Legislation: From Isolated Cases to a Lawful Systemic Practice Across Central Asian Countries</span>
+                <span class="who"><strong>Abzal Zhamalov</strong> — Association of Remote Sensing Companies in Kazakhstan (DZZ), Republic of Kazakhstan</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Coffee Break 2 -->
+        <tr class="row-break">
+          <td class="time-cell">15:40 – 16:00</td>
+          <td>
+            <span class="row-label label-break">Break</span>
+            <div class="event-title">Coffee Break ☕</div>
+          </td>
+        </tr>
+
+        <!-- Closing Session -->
+        <tr class="row-closing">
+          <td class="time-cell">16:00 – 17:30</td>
+          <td>
+            <span class="row-label label-closing">Closing Session</span>
+            <div class="event-title" style="margin-bottom:0.6rem;">Synergy &amp; Next Steps</div>
+            <ul class="speakers-list">
+              <li>
+                <span class="talk">Climate and Tectonic Uplift: Interactions and Competing Processes</span>
+                <span class="who"><strong>Dr. Gantulga Bayasgalan</strong> — School of Geology and Mining Engineering, MUST</span>
+              </li>
+              <li>
+                <span class="talk">From Ground to Air, From Point to Area: Integrating AI Drones into Advanced Surveying Technologies</span>
+                <span class="who"><strong>Louis Lai</strong> — Strong Engineering Consultants Co., Taiwan</span>
+              </li>
+              <li>
+                <span class="talk">Utilizing Hyperspectral Satellite Data for Geological Mapping and Mineral Exploration</span>
+                <span class="who"><strong>Boloroo Bayaraa</strong> — Mongolian Geospatial Association (MGA)</span>
+              </li>
+              <li>
+                <span class="talk">Demo &amp; Case Study: How Satellites Help Us Understand Earth</span>
+                <span class="who">Stories for Young Generations</span>
+              </li>
+              <li>
+                <span class="talk">Networking &amp; Q&amp;A</span>
+                <span class="who">All participants</span>
+              </li>
+              <li>
+                <span class="talk">Closing Remarks</span>
+                <span class="who">
+                  <strong>Dr. Fuan Tsai</strong> — President, Chinese Society of Photogrammetry and Remote Sensing (CSPRS), Taiwan<br>
+                  <strong>Dr. Ulziisaikhan Ganbold</strong> — Head of Academic and Quality Affairs, School of Geology and Mining Engineering, MUST
+                </span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Register CTA -->
+    <div class="register-strip">
+      <div>
+        <h4>Register for the Workshop</h4>
+        <p>Secure your place at this international geospatial event — June 24, 2026 · MUST, Ulaanbaatar</p>
+      </div>
+      <a href="#contact" class="btn btn-navy">Register Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <p class="sub">Холбоо Барих</p>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-item">
+          <span class="ci-icon">📍</span>
+          <div class="ci-text">
+            <strong>Address / Хаяг</strong>
+            P.O.Box-24, Post Office-38, Ulaanbaatar 15141, Mongolia<br>
+            <small style="color:rgba(255,255,255,0.5)">Ш.х-24, Шуудангийн салбар-38, Улаанбаатар 15141</small>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">✉️</span>
+          <div class="ci-text">
+            <strong>Email / Имэйл</strong>
+            info@geomedeelel.mn
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">👩‍💼</span>
+          <div class="ci-text">
+            <strong>Chairwoman / Тэргүүн</strong>
+            Dr. Ulziisaikhan Ganbold
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">👨‍💼</span>
+          <div class="ci-text">
+            <strong>CEO / Гүйцэтгэх Захирал</strong>
+            Dr. Lkhagvadorj Nanzad
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/MonGeospatialAssoc" target="_blank">f</a>
+          <a href="https://www.linkedin.com/company/mongolian-geospatial-association/" target="_blank">in</a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" id="contactForm">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="New message from MGA Website">
+          <input type="hidden" name="from_name" value="MGA Website — Contact">
+          <input type="text" id="cf-name" name="name" placeholder="Name / Нэр" required>
+          <input type="email" id="cf-email" name="email" placeholder="Your Email / Таны Имэйл" required>
+          <input type="text" id="cf-subject" name="user_subject" placeholder="Subject / Сэдэв">
+          <textarea id="cf-message" name="message" placeholder="Message / Мессеж" required></textarea>
+          <button type="submit" id="cf-send">Send Message / Мессеж Илгээх</button>
+          <div id="cf-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2014–2026 <strong>Mongolian Geospatial Association</strong>. All rights reserved.<br>
+  Built with passion for geospatial excellence · Газарзүйн шилдэгт хандсан</p>
+</footer>
+
+<script>
+  // ── MEMBERSHIP FORM ──
+  (function () {
+    var form    = document.getElementById('memberForm');
+    var btn     = document.getElementById('mf-submit');
+    var status  = document.getElementById('mf-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.success) {
+          var name  = form.querySelector('#mf-name').value.trim();
+          var email = form.querySelector('#mf-email').value.trim();
+          var type  = form.querySelector('#mf-type').value;
+          var org   = form.querySelector('#mf-org').value.trim();
+          var msg   = form.querySelector('#mf-message').value.trim();
+
+          status.style.color = '#1a6040';
+          status.innerHTML =
+            '✅ <strong>Thank you, ' + escapeHtml(name) + '!</strong><br>' +
+            'Your membership registration has been received. We will contact you at <em>' + escapeHtml(email) + '</em>.<br>' +
+            '<span id="mf-copy-link">📧 Send a copy from your own email</span>';
+
+          var copyLink = document.getElementById('mf-copy-link');
+          copyLink.addEventListener('click', function () {
+            var subject = 'MGA Membership Registration — ' + name;
+            var body =
+              'Name: ' + name + '\n' +
+              'Email: ' + email + '\n' +
+              'Member Type: ' + type + '\n' +
+              (org ? 'Organization: ' + org + '\n' : '') +
+              (msg ? '\nNotes: ' + msg : '');
+            window.location.href = 'mailto:info@geomedeelel.mn'
+              + '?subject=' + encodeURIComponent(subject)
+              + '&body='    + encodeURIComponent(body);
+          });
+
+          form.reset();
+        } else {
+          status.style.color = '#c0392b';
+          status.textContent = '⚠️ Something went wrong. Please try again or email info@geomedeelel.mn.';
+        }
+      })
+      .catch(function () {
+        status.style.color = '#c0392b';
+        status.textContent = '⚠️ Network error. Please try again or email info@geomedeelel.mn.';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'Register / Бүртгүүлэх';
+        status.style.display = 'block';
+      });
+    });
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, function (c) {
+        return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+      });
+    }
+  })();
+
+  // ── CONTACT FORM ──
+  (function () {
+    var form   = document.getElementById('contactForm');
+    var btn    = document.getElementById('cf-send');
+    var status = document.getElementById('cf-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.success) {
+          status.style.color = 'var(--sky)';
+          status.textContent = '✅ Message sent — we will get back to you soon.';
+          form.reset();
+        } else {
+          status.style.color = '#e87a35';
+          status.textContent = '⚠️ Something went wrong. Please email info@geomedeelel.mn directly.';
+        }
+      })
+      .catch(function () {
+        status.style.color = '#e87a35';
+        status.textContent = '⚠️ Network error. Please email info@geomedeelel.mn directly.';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'Send Message / Мессеж Илгээх';
+        status.style.display = 'block';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
