@@ -170,10 +170,7 @@
     .btn-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); }
     .btn-teal { background: var(--accent); color: #fff; }
     .btn-teal:hover { background: var(--accent2); transform: translateY(-2px); }
-    .btn-navy {
-      background: var(--navy); color: #fff;
-      border: 1px solid transparent;
-    }
+    .btn-navy { background: var(--navy); color: #fff; border: 1px solid transparent; }
     .btn-navy:hover { background: var(--blue); transform: translateY(-2px); }
 
     /* ── STATS ── */
@@ -482,13 +479,31 @@
       border-radius: 6px;
       padding: 1.5rem 2rem; display: flex;
       align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;
+      flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
     }
     .register-strip h4 {
       font-family: var(--font-display); font-size: 1.2rem;
       font-weight: 700; color: var(--navy);
     }
     .register-strip p { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+
+    /* ── PDF VIEWER ── */
+    #pdf-viewer {
+      height: 640px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface2);
+      overflow-y: auto;
+      position: relative;
+      user-select: none;
+    }
+    #pdf-viewer canvas {
+      max-width: 100%;
+      box-shadow: 0 4px 20px rgba(0,40,100,0.12);
+      border-radius: 4px;
+      background: #fff;
+      pointer-events: none;
+    }
 
     /* ── CONTACT ── */
     #contact { background: var(--navy); color: #fff; }
@@ -568,6 +583,7 @@
       .register-strip { flex-direction: column; text-align: center; }
       .member-form { grid-template-columns: 1fr; }
       .member-form-wrap { padding: 1.5rem; }
+      #pdf-viewer { height: 480px; }
     }
   </style>
 </head>
@@ -694,7 +710,6 @@
       <div class="divider"></div>
     </div>
 
-    <!-- Member Types -->
     <div class="member-types">
       <div class="member-type-card">
         <div class="icon">🎓</div>
@@ -723,7 +738,6 @@
       </div>
     </div>
 
-    <!-- Registration Form -->
     <div class="member-form-wrap">
       <form class="member-form" id="memberForm">
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
@@ -795,7 +809,6 @@
       <div class="divider"></div>
     </div>
 
-    <!-- Workshop Hero Card -->
     <div class="workshop-hero">
       <div class="ws-badge">Upcoming Event</div>
       <h3>International Workshop on<br>Remote Sensing and Geospatial Applications</h3>
@@ -815,7 +828,6 @@
       </div>
     </div>
 
-    <!-- AGENDA -->
     <div class="agenda-title">📋 Full Workshop Agenda</div>
 
     <table class="agenda-table">
@@ -827,7 +839,6 @@
       </thead>
       <tbody>
 
-        <!-- Registration -->
         <tr class="row-registration">
           <td class="time-cell">08:30 – 09:00</td>
           <td>
@@ -836,7 +847,6 @@
           </td>
         </tr>
 
-        <!-- Opening -->
         <tr class="row-opening">
           <td class="time-cell">09:00 – 09:20</td>
           <td>
@@ -855,7 +865,6 @@
           </td>
         </tr>
 
-        <!-- MOU -->
         <tr class="row-mou">
           <td class="time-cell">09:20 – 09:30</td>
           <td>
@@ -865,7 +874,6 @@
           </td>
         </tr>
 
-        <!-- Keynote -->
         <tr class="row-keynote">
           <td class="time-cell">09:30 – 10:00</td>
           <td>
@@ -875,7 +883,6 @@
           </td>
         </tr>
 
-        <!-- Keynote 2 -->
         <tr class="row-keynote">
           <td class="time-cell">10:00 – 10:25</td>
           <td>
@@ -885,7 +892,6 @@
           </td>
         </tr>
 
-        <!-- Break -->
         <tr class="row-break">
           <td class="time-cell">10:25 – 10:45</td>
           <td>
@@ -894,7 +900,6 @@
           </td>
         </tr>
 
-        <!-- Session I -->
         <tr class="row-s1">
           <td class="time-cell">10:45 – 12:30</td>
           <td>
@@ -925,7 +930,6 @@
           </td>
         </tr>
 
-        <!-- Lunch -->
         <tr class="row-lunch">
           <td class="time-cell">12:30 – 14:00</td>
           <td>
@@ -934,7 +938,6 @@
           </td>
         </tr>
 
-        <!-- Session II -->
         <tr class="row-s2">
           <td class="time-cell">14:00 – 15:40</td>
           <td>
@@ -961,7 +964,6 @@
           </td>
         </tr>
 
-        <!-- Coffee Break 2 -->
         <tr class="row-break">
           <td class="time-cell">15:40 – 16:00</td>
           <td>
@@ -970,7 +972,6 @@
           </td>
         </tr>
 
-        <!-- Closing Session -->
         <tr class="row-closing">
           <td class="time-cell">16:00 – 17:30</td>
           <td>
@@ -1011,7 +1012,46 @@
       </tbody>
     </table>
 
-    <!-- Register CTA -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- Presentation Archive — VIEW ONLY -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div style="margin-top: 3rem;">
+      <div class="agenda-title">📖 Presentation Archive / Илтгэлийн Архив</div>
+
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 16px rgba(0,40,100,0.06);">
+
+        <div style="margin-bottom: 1rem;">
+          <label for="pdf-select" style="display: block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem;">
+            Select a presentation / Илтгэл сонгох
+          </label>
+          <select id="pdf-select" style="width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: 4px; font-family: var(--font-body); font-size: 0.9rem; color: var(--text); background: var(--surface2);">
+            <option value="">— Choose a presentation —</option>
+            <option value="presentations/1%20-%20GeoSpatialAI.pdf">1 — Remote Sensing, Spatial Analysis &amp; AI (Dr. Fuan Tsai, Taiwan)</option>
+            <option value="presentations/2%20-%20IRIMHE%20-%2024%20June.pdf">2 — Introduction of the National Remote Sensing Center (Dr. Lkhagvadorj Nanzad)</option>
+            <option value="presentations/3-Mongolia_2026_last.pdf">3 — Remote Sensing &amp; GNSS-based Validation (Prof. Aive Liibusk, Estonia)</option>
+            <option value="presentations/4%20-%20UB%20digital%20twin%20eng.pdf">4 — Ubhub: Ulaanbaatar Digital Twin Platform (Bilguuntugs Tovuusuren)</option>
+            <option value="presentations/5%20-%20Applications%20of%20Geospatial%20Technology%20_CECI_0624.pdf">5 — Applications of Geospatial Technology in Public Infrastructure (Chen-Yung Lu, Taiwan)</option>
+            <option value="presentations/6%20-%20Monitoring%20the%20Progression%20of%20Forest%20Pest%20Damage%20Burmaa.pdf">6 — Monitoring Forest Pest Damage using UAV Imagery (Burmaa Chuluunbat)</option>
+            <option value="presentations/7%20-%20Usukhbayar%20Ganbaatar.pdf">7 — Traffic Congestion &amp; Sustainable Mobility in Ulaanbaatar (Usukhbayar Ganbaatar)</option>
+            <option value="presentations/8%20-%20HSI_4PCD_Bayasgalan.pdf">8 — Alteration Zoning in Porphyry Deposits (Dr. Bayasgalan Amgalan)</option>
+            <option value="presentations/9%20-%20Mongolia_WS_TsutomuYamanokuchi_20260624A.pdf">9 — AI-Based Info Extraction from Satellites (Tsutomu Yamanokuchi, Japan)</option>
+            <option value="presentations/10%20-%20Ulaanbaatar_Flood_Risk_Intelligence-6_24.pdf">10 — Urban Flood Risk Modelling in Ulaanbaatar (Erkhemzorig Ishdorj)</option>
+            <option value="presentations/11%20-%20Presentation%20UB%2C%20Abzal%20Zhamalov%2C%2024%20June%2C%202026.pdf">11 — Satellite Monitoring in Central Asia (Abzal Zhamalov, Kazakhstan)</option>
+            <option value="presentations/13%20-%2020260624_From%20Ground%20to%20Air%20From%20Point%20to%20Area%20Integrating%20AI%20Drones%20into%20Strong%20Co%20Advanced%20Surveying%20Technologies%20_%E7%83%8F%E8%98%AD%E5%B7%B4%E6%89%98.pdf">13 — AI Drones in Advanced Surveying (Louis Lai, Taiwan)</option>
+            <option value="presentations/15%20-%20Presentation_Boloroo.pdf">14 — Hyperspectral Satellite Data for Geology (Boloroo Bayaraa)</option>
+            <option value="presentations/12%20-%20Methodology_Presentation.pdf">15 — Methodology Presentation</option>
+          </select>
+        </div>
+
+        <div id="pdf-viewer">
+          <div style="text-align:center; padding-top: 5rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8;">
+            📖<br><br>Select a presentation from the dropdown above<br>to view it here.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
     <div class="register-strip">
       <div>
         <h4>Register for the Workshop</h4>
@@ -1091,12 +1131,17 @@
   Built with passion for geospatial excellence · Газарзүйн шилдэгт хандсан</p>
 </footer>
 
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PDF.js — loaded FIRST so pdfjsLib is available -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
 <script>
   // ── MEMBERSHIP FORM ──
   (function () {
-    var form    = document.getElementById('memberForm');
-    var btn     = document.getElementById('mf-submit');
-    var status  = document.getElementById('mf-status');
+    var form   = document.getElementById('memberForm');
+    var btn    = document.getElementById('mf-submit');
+    var status = document.getElementById('mf-status');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -1106,10 +1151,7 @@
 
       var data = new FormData(form);
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (res.success) {
@@ -1125,15 +1167,11 @@
             'Your membership registration has been received. We will contact you at <em>' + escapeHtml(email) + '</em>.<br>' +
             '<span id="mf-copy-link">📧 Send a copy from your own email</span>';
 
-          var copyLink = document.getElementById('mf-copy-link');
-          copyLink.addEventListener('click', function () {
+          document.getElementById('mf-copy-link').addEventListener('click', function () {
             var subject = 'MGA Membership Registration — ' + name;
-            var body =
-              'Name: ' + name + '\n' +
-              'Email: ' + email + '\n' +
-              'Member Type: ' + type + '\n' +
-              (org ? 'Organization: ' + org + '\n' : '') +
-              (msg ? '\nNotes: ' + msg : '');
+            var body = 'Name: ' + name + '\nEmail: ' + email + '\nMember Type: ' + type + '\n'
+                     + (org ? 'Organization: ' + org + '\n' : '')
+                     + (msg ? '\nNotes: ' + msg : '');
             window.location.href = 'mailto:info@geomedeelel.mn'
               + '?subject=' + encodeURIComponent(subject)
               + '&body='    + encodeURIComponent(body);
@@ -1177,10 +1215,7 @@
 
       var data = new FormData(form);
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (res.success) {
@@ -1203,6 +1238,71 @@
       });
     });
   })();
+
+  // ── PDF VIEWER (view-only) ──
+  (function () {
+    if (typeof pdfjsLib === 'undefined') {
+      console.warn('PDF.js not loaded — viewer disabled.');
+      return;
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    var select = document.getElementById('pdf-select');
+    var viewer = document.getElementById('pdf-viewer');
+    var currentDoc = null;
+
+    select.addEventListener('change', function () {
+      var url = this.value;
+
+      if (currentDoc) { try { currentDoc.destroy(); } catch (e) {} currentDoc = null; }
+      viewer.innerHTML = '';
+
+      if (!url) {
+        viewer.innerHTML = '<div style="text-align:center; padding-top: 5rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8;">📖<br><br>Select a presentation from the dropdown above<br>to view it here.</div>';
+        return;
+      }
+
+      viewer.innerHTML = '<div style="text-align:center; padding-top: 5rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.85rem;">⏳ Loading presentation…</div>';
+
+      pdfjsLib.getDocument(url).promise
+        .then(function (pdf) {
+          currentDoc = pdf;
+          viewer.innerHTML = '';
+
+          var wrap = document.createElement('div');
+          wrap.style.cssText = 'display:flex; flex-direction:column; gap:1.25rem; align-items:center; padding: 1rem;';
+          viewer.appendChild(wrap);
+
+          var chain = Promise.resolve();
+          for (var i = 1; i <= pdf.numPages; i++) {
+            (function (pageNum) {
+              chain = chain.then(function () {
+                return pdf.getPage(pageNum).then(function (page) {
+                  var viewport = page.getViewport({ scale: 1.4 });
+                  var canvas = document.createElement('canvas');
+                  canvas.width  = viewport.width;
+                  canvas.height = viewport.height;
+                  wrap.appendChild(canvas);
+                  return page.render({
+                    canvasContext: canvas.getContext('2d'),
+                    viewport: viewport
+                  }).promise;
+                });
+              });
+            })(i);
+          }
+        })
+        .catch(function (err) {
+          console.error('PDF load error:', err);
+          viewer.innerHTML = '<div style="text-align:center; padding-top: 5rem; color: #c0392b; font-family: var(--font-mono); font-size: 0.85rem;">⚠️ Could not load this presentation.<br>Please try another one.</div>';
+        });
+    });
+
+    viewer.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  })();
 </script>
+
 </body>
 </html>
