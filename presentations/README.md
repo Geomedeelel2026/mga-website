@@ -1,1 +1,2 @@
-presentations/README.md
+# Workshop Presentations
+PDF files for MGA workshop presentations.
