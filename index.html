@@ -598,6 +598,7 @@
     <a href="#geo-academy">Geo-Academy</a>
     <a href="#membership">Membership</a>
     <a href="#geo-events" class="highlight">Geo-Events</a>
+    <a href="#geo-apps">Geo-Apps</a>
     <a href="#contact">Contact</a>
     <span class="lang-toggle">MN / EN</span>
   </div>
@@ -1632,6 +1633,145 @@
     });
   }
   tick(); setInterval(tick, 1000);
+})();
+</script>
+</section>
+
+<!-- GEO-APPS -->
+<section id="geo-apps" class="gx">
+<style>
+#geo-apps{--gx-navy:#0d2550;--gx-teal:#0f7a72;--gx-green:#2e8b3e;--gx-lime:#9bd36a;--gx-cyan:#17a9c1;--gx-gold:#e3b440;--gx-ink:#1d2b3a;--gx-muted:#5b6b7b;--gx-soft:#f2f7fa;--gx-line:#dbe5ec;
+  position:relative;z-index:1;background:var(--gx-soft);color:var(--gx-ink);padding:80px 20px;font-family:inherit;line-height:1.55;scroll-margin-top:60px}
+#geo-apps *,#geo-apps *::before,#geo-apps *::after{box-sizing:border-box}
+#geo-apps .gx-wrap{max-width:1140px;margin:0 auto}
+#geo-apps h2,#geo-apps h3,#geo-apps h4{margin:0;color:var(--gx-navy);line-height:1.2;font-family:var(--font-display,inherit);letter-spacing:0}
+#geo-apps p{margin:0}
+#geo-apps .gx-mn{display:block;color:var(--gx-muted);font-size:.92em;margin-top:4px}
+#geo-apps .gx-eyebrow{font-family:var(--font-mono,inherit);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gx-teal)}
+#geo-apps .gx-head h2{font-size:2.4rem;margin-top:6px}
+#geo-apps .gx-head p{margin-top:12px;max-width:760px}
+#geo-apps .gx-badge{display:inline-block;font-family:var(--font-mono,inherit);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:999px;background:var(--gx-green);color:#fff}
+
+/* app card */
+#geo-apps .gx-app{margin-top:34px;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(13,37,80,.1);border:1px solid var(--gx-line)}
+#geo-apps .gx-app-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 24px;border-bottom:1px solid var(--gx-line)}
+#geo-apps .gx-app-head h3{font-size:1.6rem;margin-top:8px}
+#geo-apps .gx-meta{font-family:var(--font-mono,inherit);font-size:.78rem;color:var(--gx-muted);margin-top:6px}
+#geo-apps .gx-btn{display:inline-block;background:var(--gx-navy);color:#fff;font-weight:700;font-size:.9rem;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap}
+#geo-apps .gx-btn:hover{filter:brightness(1.15)}
+#geo-apps .gx-frame{position:relative;background:#0d1b2a}
+#geo-apps .gx-frame iframe{display:block;width:100%;height:78vh;min-height:560px;border:0}
+#geo-apps .gx-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#b9c8dd;font-family:var(--font-mono,inherit);font-size:.85rem;pointer-events:none}
+#geo-apps .gx-hint{padding:12px 24px;font-size:.88rem;color:var(--gx-muted);background:#fafcfd;border-top:1px solid var(--gx-line)}
+
+/* feature cards */
+#geo-apps .gx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+#geo-apps .gx-card{background:#fff;border:1px solid var(--gx-line);border-radius:12px;padding:16px 18px;border-top:4px solid var(--gx-cyan)}
+#geo-apps .gx-card:nth-child(2){border-top-color:var(--gx-teal)}
+#geo-apps .gx-card:nth-child(3){border-top-color:var(--gx-green)}
+#geo-apps .gx-card:nth-child(4){border-top-color:var(--gx-gold)}
+#geo-apps .gx-card b{display:block;color:var(--gx-navy);font-size:1.02rem}
+#geo-apps .gx-card span{display:block;font-size:.9rem;margin-top:4px}
+#geo-apps .gx-card .gx-mn{font-size:.85em}
+
+/* method */
+#geo-apps .gx-method{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:22px}
+#geo-apps .gx-method>*{min-width:0}
+#geo-apps .gx-box{background:#fff;border:1px solid var(--gx-line);border-radius:12px;padding:20px 22px}
+#geo-apps .gx-box h4{font-size:1.15rem;margin-bottom:10px}
+#geo-apps .gx-formula{font-family:"Cambria Math",Cambria,Georgia,serif;font-size:1.02rem;background:var(--gx-soft);border-left:4px solid var(--gx-green);border-radius:8px;padding:12px 14px;overflow-x:auto;white-space:nowrap}
+#geo-apps .gx-list{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:6px;font-size:.92rem}
+#geo-apps .gx-list code{font-family:var(--font-mono,monospace);font-size:.85em;background:var(--gx-soft);padding:1px 6px;border-radius:4px}
+#geo-apps .gx-cite{font-size:.86rem;color:var(--gx-muted);line-height:1.55}
+#geo-apps .gx-cite a{color:var(--gx-teal)}
+
+@media (max-width:900px){
+  #geo-apps .gx-grid{grid-template-columns:repeat(2,1fr)}
+  #geo-apps .gx-method{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  #geo-apps{padding:56px 14px}
+  #geo-apps .gx-head h2{font-size:1.9rem}
+  #geo-apps .gx-grid{grid-template-columns:1fr}
+  #geo-apps .gx-app-head{padding:18px}
+  #geo-apps .gx-frame iframe{height:75vh;min-height:480px}
+  #geo-apps .gx-formula{white-space:normal;font-size:.95rem}
+  #geo-apps .gx-box{padding:18px}
+}
+</style>
+
+<div class="gx-wrap">
+
+  <div class="gx-head">
+    <div class="gx-eyebrow">Mongolian Geospatial Association</div>
+    <h2>Geo-Apps <span class="gx-mn">Гео-Аппликейшн</span></h2>
+    <p>Interactive Google Earth Engine tools built by Mongolia's geospatial community.
+      <span class="gx-mn">Монголын геомэдээллийн хамт олны бүтээсэн Google Earth Engine интерактив хэрэгслүүд.</span></p>
+  </div>
+
+  <!-- APP -->
+  <div class="gx-app" id="gx-forest">
+    <div class="gx-app-head">
+      <div>
+        <span class="gx-badge">Live · Sentinel-2</span>
+        <h3>Darkhan-Uul Forest Index Explorer <span class="gx-mn">Дархан-Уул аймгийн ойн индексийн судалгаа</span></h3>
+        <div class="gx-meta">SFI2 · NDVI · RVI · SAVI · LAI &nbsp;|&nbsp; May–October / 5–10 сар &nbsp;|&nbsp; 2017–2026</div>
+      </div>
+      <a class="gx-btn" id="gx-full" href="#" target="_blank" rel="noopener">Full screen ↗ · Бүтэн дэлгэц</a>
+    </div>
+    <div class="gx-frame">
+      <div class="gx-loading" id="gx-loading">Loading map… · Газрын зураг ачаалж байна…</div>
+      <iframe id="gx-iframe" title="Darkhan-Uul Forest Index Explorer (Google Earth Engine)" loading="lazy" allowfullscreen></iframe>
+    </div>
+    <div class="gx-hint">
+      Pick a year, choose an index, and drag the divider to compare it with SFI2. Click the map to inspect a pixel.
+      <span class="gx-mn">Он, индексээ сонгоод хуваагчийг чирж SFI2-тэй харьцуулна уу. Газрын зураг дээр дарж пикселийн утгыг харна.</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="gx-grid">
+    <div class="gx-card"><b>SFI2 by year</b><span>Forest / non-forest at SFI2 ≥ 1.2<span class="gx-mn">Жил бүрийн SFI2, ой ба ойн бус</span></span></div>
+    <div class="gx-card"><b>Index comparison</b><span>Swipe map, r and R², scatter plot<span class="gx-mn">Индексийн харьцуулалт, корреляци</span></span></div>
+    <div class="gx-card"><b>Yearly statistics</b><span>Forest area and means, CSV download<span class="gx-mn">Ойн талбай, дундаж утга, CSV</span></span></div>
+    <div class="gx-card"><b>Pixel inspector</b><span>Values and a 2017–2026 time series<span class="gx-mn">Пикселийн утга, хугацааны цуваа</span></span></div>
+  </div>
+
+  <!-- METHOD -->
+  <div class="gx-method">
+    <div class="gx-box">
+      <h4>Method <span class="gx-mn">Арга зүй</span></h4>
+      <div class="gx-formula">SFI2 = [(ρ<sub>NIR</sub> − ρ<sub>RED</sub> − L) / (ρ<sub>NIR</sub> + ρ<sub>RED</sub>)] × [ln ρ<sub>NIRn</sub> − ln ρ<sub>GREEN</sub>], &nbsp;L = 0.01</div>
+      <ul class="gx-list">
+        <li><code>NDVI</code> (NIR − RED) / (NIR + RED)</li>
+        <li><code>RVI</code> NIR / RED</li>
+        <li><code>SAVI</code> 1.5 (NIR − RED) / (NIR + RED + 0.5)</li>
+        <li><code>LAI</code> 3.618 × EVI − 0.118 (Boegh et al. 2002)</li>
+      </ul>
+    </div>
+    <div class="gx-box">
+      <h4>Data &amp; reference <span class="gx-mn">Өгөгдөл ба эх сурвалж</span></h4>
+      <ul class="gx-list" style="margin:0 0 14px">
+        <li><code>2019–2026</code> Sentinel-2 L2A, SCL cloud mask</li>
+        <li><code>2017–2018</code> Sentinel-2 L1C, s2cloudless mask</li>
+        <li><code>Bands</code> B2, B3, B4, B8, B8A · cloud &lt; 25%</li>
+      </ul>
+      <p class="gx-cite">Norovsuren, B., Batchuluun, T., Renchin, T., &amp; Natsagdorj, E. (2023). Development of the spectral forest index in the Khangai region, Mongolia using Sentinel-2 imagery. <em>Forest Science and Technology</em>, 19(1), 1–11.
+        <a href="https://doi.org/10.1080/21580103.2022.2153928" target="_blank" rel="noopener">doi:10.1080/21580103.2022.2153928</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  // ===== Published Earth Engine App URL — replace with your real link =====
+  var GX_APP_URL = 'https://ee-olkhamjav.projects.earthengine.app/view/darkhan-forest';
+
+  var f = document.getElementById('gx-iframe'), l = document.getElementById('gx-loading');
+  document.getElementById('gx-full').href = GX_APP_URL;
+  f.addEventListener('load', function(){ l.style.display = 'none'; });
+  f.src = GX_APP_URL;
 })();
 </script>
 </section>
